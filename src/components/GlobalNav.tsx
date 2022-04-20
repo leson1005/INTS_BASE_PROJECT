@@ -3,7 +3,7 @@ import { Menu } from 'semantic-ui-react'
 import { useDispatch } from 'react-redux'
 import { push } from 'redux-first-history'
 
-type NaviItem = 'home' | 'renderProps'
+type NaviItem = 'home' | 'renderProps' | 'accounts'
 
 const GlobalNav: React.FC<{ activeItem: NaviItem }> = ({ activeItem }) => {
   const dispatch = useDispatch()
@@ -16,6 +16,7 @@ const GlobalNav: React.FC<{ activeItem: NaviItem }> = ({ activeItem }) => {
         onClick={() => dispatch(push('/renderProps'))}
         link={true}
       />
+      <Menu.Item name="Accounts" active={activeItem === 'accounts'} onClick={() => dispatch(push('/accounts'))} link={true} />
     </Menu>
   )
 }

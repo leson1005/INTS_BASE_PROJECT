@@ -12,6 +12,14 @@ export interface GithubRepository {
   html_url: string
 }
 
+export interface Account {
+  id: number,
+  name: string,
+  email: string,
+  contact: string,
+  address: string
+}
+
 declare module 'keymirror' {
   export default function keyMirror()
 }

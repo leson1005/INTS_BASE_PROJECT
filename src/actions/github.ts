@@ -16,7 +16,7 @@ interface FetchRepositoryError {
 
 const githubActions = {
   fetchRepositories: ac.async<FetchRepositoryParam, FetchRepositoryResult, FetchRepositoryError>(
-    ActionTypes.FETCH_REPOSITORIES,
+      ActionTypes.FETCH_REPOSITORIES,
   ),
 }
 
