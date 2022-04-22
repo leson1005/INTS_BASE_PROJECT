@@ -5,4 +5,7 @@ export const ActionTypes = keyMirror({
   USER_LOGOUT: undefined,
   FETCH_REPOSITORIES: undefined,
   FETCH_ACCOUNTS: undefined,
+  CREATE_ACCOUNTS: undefined,
+  UPDATE_ACCOUNTS: undefined,
+  DELETE_ACCOUNTS: undefined,
 })

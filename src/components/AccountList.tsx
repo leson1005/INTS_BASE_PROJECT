@@ -1,19 +1,28 @@
 import React from 'react'
-import { Table } from 'semantic-ui-react'
+import {Table} from 'semantic-ui-react'
 import {Account} from '../types/common'
 import CenterLoader from 'components/CenterLoader'
+import accountActions from '../actions/account'
+import {useDispatch} from 'react-redux'
 
 const AccountList: React.FC<{
     items: Account[]
     total_count: number
     isLoading: boolean
 }> = ({items, total_count, isLoading}) => {
+  const dispatch = useDispatch()
+  let x = items[0]
   const totalCountElem = items.length > 0 ? <div>Total Count: {total_count}</div> : <></>
   const table = items.length > 0 ? (
     <>
-      <button>Add account</button>
+      <button
+        onClick={() => {
+          dispatch(accountActions.createDatas.started({abc: x}))
+        }}>
+        Add account
+      </button>
       <Table striped>
-        <Table.Header>
+        <Table.Header>z
           <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
             <Table.HeaderCell>Email</Table.HeaderCell>

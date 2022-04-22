@@ -18,6 +18,36 @@ export const fetchAccounts: Epic<AnyAction, any, any, { axios: AxiosInstance }> 
       )
         .pipe(
           map((data) => {
+            //console.log('$state', $state)
+            return accountActions.fetchDatas.done({
+              params: param.payload,
+              result: { data: data.data },
+            })
+          }),
+          catchError((error: AxiosError) =>
+            of(
+              accountActions.fetchDatas.failed({
+                params: param.payload,
+                error: { error: error.message },
+              }),
+            ),
+          ),
+        ),
+    ),
+  )
+
+
+export const createAccounts: Epic<AnyAction, any, any, { axios: AxiosInstance }> = (action$, $state, { axios }) =>
+  action$.pipe(
+    ofAction(accountActions.createDatas.started),
+    mergeMap((param) =>
+      from(
+        axios.post(
+          'https://624ff065e3e5d24b3418d744.mockapi.io/api/v1/products',
+        ),
+      )
+        .pipe(
+          map((data) => {
             console.log('param:', param)
             console.log('data:', data)
             return accountActions.fetchDatas.done({

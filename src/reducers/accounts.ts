@@ -15,7 +15,6 @@ const accountReducer = {
       })
     })
     .case(accountActions.fetchDatas.done, (state, action) => {
-      console.log('accountReducer.account.case.data:', action.result.data)
       return immutable(state, {
         status: {$set: 'idle'},
         data: {$set: action.result.data},
