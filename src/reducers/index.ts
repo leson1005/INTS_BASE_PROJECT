@@ -1,6 +1,6 @@
 import userReducer from './user'
 import githubReducer from './github'
-import accountReducer from "./accounts";
+import accountReducer from './accounts'
 
 const reducers = {
   ...userReducer,

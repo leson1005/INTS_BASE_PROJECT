@@ -5,6 +5,7 @@ import {Account} from '../types/common'
 const ac = actionCreatorFactory()
 
 interface FetAccountParam {}
+
 interface CreateDatasParam {
   abc: Account
 }

@@ -22,7 +22,7 @@ const AccountList: React.FC<{
         Add account
       </button>
       <Table striped>
-        <Table.Header>z
+        <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
             <Table.HeaderCell>Email</Table.HeaderCell>
